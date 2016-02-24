@@ -2,7 +2,7 @@
 
 DMX is a Yeoman generator to get you building interfaces faster. [Jekyll](http://jekyllrb.com/) is included for static site generation. [Bootstrap](http://getbootstrap.com) is included to help you build your site quickly.
 
-[Grunt](http://gruntjs.com/) is used for compilation of [Sass](http://sass-lang.com) and [CoffeeScript](http://coffeescript.org) (optional). [Bower](http://bower.io/) is used for managing dependencies.
+[Grunt](http://gruntjs.com/) is used for compilation of [Less](http://lesscss.org/) and [CoffeeScript](http://coffeescript.org) (optional). [Bower](http://bower.io/) is used for managing dependencies.
 
 ### Prerequisites
 If you do not have [Node.js](http://nodejs.org/) `>=0.10`, [Yeoman](http://yeoman.io/) `>=1.1.2`, [Ruby](https://www.ruby-lang.org/en/) `>=1.9` and the [Bundler](http://bundler.io/) gem installed, you must do that first:
