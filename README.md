@@ -12,7 +12,14 @@ If you do not have [Node.js](http://nodejs.org/) `>=0.10`, [Yeoman](http://yeoma
 - [Ruby](https://rvm.io/rvm/install)
 - [Bundler](http://bundler.io/#getting-started)
 
-### Installation
+### Installation 
+````bash
+git clone https://github.com/pocketbird/generator-dmx.git
+cd generator-dmx
+npm link
+````
+
+##### Via NPM (maybe. someday.)
 ````bash
 npm install -g generator-dmx
 ````
