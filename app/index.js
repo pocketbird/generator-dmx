@@ -10,15 +10,25 @@ var shelljs = require('shelljs');
 var dmxGenerator = module.exports = function dmxGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  var dependenciesInstalled = ['bundle', 'ruby'].every(function (depend) {
+  var rubyInstalled = ['ruby'].every(function (depend) {
     return shelljs.which(depend);
   });
 
   // Exit if Ruby dependencies aren't installed
-  if (!dependenciesInstalled) {
-    console.log('Looks like you\'re missing some dependencies.' +
-      '\nMake sure ' + chalk.white('Ruby') + ' and the ' + chalk.white('Bundler gem') + ' are installed, then run again.');
+  if (!rubyInstalled) {
+    console.log('Looks like you\'re missing Ruby.' +
+      '\nMake sure ' + chalk.white('Ruby') + ' is installed, then run again.');
     shelljs.exit(1);
+  }
+
+  var bundlerInstalled = ['bundle'].every(function (depend) {
+    return shelljs.which(depend);
+  });
+
+  // Exit if Ruby dependencies aren't installed
+  if (!bundlerInstalled) {
+    console.log('Looks like you\'re missing bundler.  Let me install that for you.');
+    shelljs.exec('gem install ./gems/bundler-1.11.2.gem');
   }
 
   this.gitInfo = {
@@ -188,7 +198,7 @@ dmxGenerator.prototype.rubyDependencies = function rubyDependencies() {
     if (err) {
       return this.emit('error', err);
     }
-    shelljs.exec('bundle install');
+    shelljs.exec('bundle install --local');
   });
 };
 
