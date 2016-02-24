@@ -70,6 +70,21 @@ module.exports = function (grunt) {
         }
       }
     },
+    browserSync: {
+      server: {
+        bsFiles: {
+          src: [
+            // grunt-contrib-watch handles all src files
+          ]
+        },
+        options: {
+          open: false,
+          proxy: '0.0.0.0:9000', // Proxy the connect:livereload server
+          watchTask: true,
+          xip: true
+        }
+      }
+    },
     clean: {
       dist: {
         files: [{
