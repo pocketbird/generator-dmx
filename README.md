@@ -1,6 +1,6 @@
 # DMX
 
-DMX is a Yeoman generator to get you building interfaces faster. [Jekyll](http://jekyllrb.com/) is included for static site generation. [Bootstrap](http://getbootstrap.com) is included to help you build your site quickly (and because, well, HCA has chosen it as its base framework).
+DMX is a Yeoman generator to get you building interfaces faster. [Jekyll](http://jekyllrb.com/) is included for static site generation. [Bootstrap](http://getbootstrap.com) is included to help you build your site quickly.
 
 [Grunt](http://gruntjs.com/) is used for compilation of [Sass](http://sass-lang.com) and [CoffeeScript](http://coffeescript.org) (optional). [Bower](http://bower.io/) is used for managing dependencies.
 
