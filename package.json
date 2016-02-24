@@ -1,12 +1,9 @@
 {
   "name": "generator-dmx",
-  "version": "1.2.0",
-  "description": "A Yeoman generator for a Jekyll site utilizing thoughtbot's Bourbon toolset.",
+  "version": "0.0.1",
+  "description": "A Yeoman generator for a Jekyll site utilizing Bootstrap's UI Framework.",
   "keywords": [
     "yeoman-generator",
-    "bourbon",
-    "neat",
-    "bitters",
     "jekyll",
     "jekyllrb",
     "static",
@@ -14,21 +11,21 @@
     "web",
     "site",
     "prototype",
-    "sass",
+    "less",
     "coffeescript",
     "libsass"
   ],
-  "homepage": "http://centresource.github.io/generator-dmx/",
-  "bugs": "https://github.com/centresource/generator-dmx/issues",
+  "homepage": "https://github.com/hcadigitalmedia/generator-dmx/",
+  "bugs": "https://github.com/hcadigitalmedia/generator-dmx/issues",
   "author": {
-    "name": "David Calhoun",
-    "email": "dpcalhoun@gmail.com",
-    "url": "http://centresource.com"
+    "name": "Colin Carter",
+    "email": "colin.carter@hcahealthcare.com",
+    "url": "http://codefashioned.com"
   },
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/centresource/generator-dmx.git"
+    "url": "git://github.com/hcadigitalmedia/generator-dmx.git"
   },
   "scripts": {
     "test": "mocha"
@@ -51,7 +48,7 @@
   },
   "licenses": [
     {
-      "type": "MIT"
+      "type": ""
     }
   ]
 }

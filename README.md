@@ -1,13 +1,13 @@
-# dmx
+# DMX
 
-dmx is a Yeoman generator to get you building interfaces faster. [Jekyll](http://jekyllrb.com/) is included for static site generation. [Bourbon](http://bourbon.io), [Neat](http://neat.bourbon.io) & [Bitters](http://bitters.bourbon.io/) are included to help you write CSS faster.
+DMX is a Yeoman generator to get you building interfaces faster. [Jekyll](http://jekyllrb.com/) is included for static site generation. [Bootstrap](http://getbootstrap.com) is included to help you build your site quickly (and because, well, HCA has chosen it as its base framework).
 
 [Grunt](http://gruntjs.com/) is used for compilation of [Sass](http://sass-lang.com) and [CoffeeScript](http://coffeescript.org) (optional). [Bower](http://bower.io/) is used for managing dependencies.
 
 ### Prerequisites
 If you do not have [Node.js](http://nodejs.org/) `>=0.10`, [Yeoman](http://yeoman.io/) `>=1.1.2`, [Ruby](https://www.ruby-lang.org/en/) `>=1.9` and the [Bundler](http://bundler.io/) gem installed, you must do that first:
 
-- [Node.js](http://davidcalhoun.me/2013/12/16/developer-tools-homebrew/)
+- [Node.js](https://nodejs.org/en/)
 - [Yeoman](http://yeoman.io/learning/index.html)
 - [Ruby](https://rvm.io/rvm/install)
 - [Bundler](http://bundler.io/#getting-started)
@@ -29,7 +29,7 @@ npm update -g generator-dmx # Upgrade generator-dmx globally
 ```
 
 ### Usage
-dmx will run `bundle install`, so if you would like to install the dmx gems into a gemset, set that up before running `yo dmx`.
+DMX will run `bundle install`, so if you would like to install the DMX gems into a gemset, set that up before running `yo dmx`.
 
 ````bash
 mkdir project-name && cd project-name

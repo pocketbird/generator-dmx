@@ -25,17 +25,6 @@ The resulting dmx generator will be referencing your local copy of the dmx respo
 - Refer to the issue/PR number in your squashed commit message.
 
 
-### SCSS Style Guide
-- Follow the [Centresource FE Guidelines](https://sites.google.com/a/centresource.com/csintranet/Home/development/centresource-fe-dev-guide).
-- Two spaces, no tabs.
-- Dashes instead of underscores or camel case: `span-columns` **not** `span_columns` or `spanColumns`
-- Names should be descriptive and written in full-words: `$visual-grid-color` **not** `$color` or `$vslgrd-clr`
-- Space between property and value: `width: 20px` **not** `width:20px`
-- Declarations within a block should be ordered alphabetically.
-- Blank lines between rules.
-- No trailing whitespace. Blank lines should not have any space.
-
-
 ### Tagging and Publishing Releases
 1. Update the [package version](https://github.com/centresource/generator-dmx/blob/master/package.json#L3) in `package.json`. This should match the version number that you are publishing to [npmjs.org](https://www.npmjs.org/package/generator-dmx).
 2. Commit your version bump: `git commit -am "Version bump."`

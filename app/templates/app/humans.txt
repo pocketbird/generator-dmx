@@ -15,7 +15,7 @@
   Yeoman
   Grunt
   Bower
-  Sass
+  Less
   Coffeescript
   HTML5 ★ Boilerplate
   Bourbon

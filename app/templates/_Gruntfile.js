@@ -11,9 +11,9 @@ module.exports = function (grunt) {
       dist: 'dist'
     },
     watch: {
-      sass: {
-        files: ['<%%= yeoman.app %>/styles/**/*.{scss,sass}'],
-        tasks: ['sass:server']
+      less: {
+        files: ['<%%= yeoman.app %>/styles/**/*.{less}'],
+        tasks: ['less:server']
       },<% if (jsPre === 'coffeescript') { %>
       coffee: {
         files: ['<%%= yeoman.app %>/scripts/**/*.coffee'],
@@ -89,39 +89,27 @@ module.exports = function (grunt) {
         '.jekyll'
       ]
     },
-    sass: {<% if (sassComp === 'ruby') { %>
-      options: {
-        bundleExec: true,
-        debugInfo: false,
-        lineNumbers: false,
-        loadPath: './vendor'
-      },<% } %><% if (sassComp === 'libsass') { %>
-      options: {
-        sourceMap: false,
-        includePaths: ['./vendor']
-      },<% } %>
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%%= yeoman.app %>/styles',
-          src: '*.{scss,sass}',
-          dest: '.tmp/styles',
-          ext: '.css'
-        }]
-      },
+    less: {
       server: {
         options: {
+          compress: true,
           debugInfo: true,
-          lineNumbers: true
+          lineNumbers: true,
+          optimization: 2,
+          paths: [
+            './vendor',
+            './vendor/bower_components'
+          ],
+          yuicompress: true
         },
         files: [{
           expand: true,
           cwd: '<%%= yeoman.app %>/styles',
-          src: '*.{scss,sass}',
+          src: '*.{less}',
           dest: '.tmp/styles',
           ext: '.css'
         }]
-      }
+      },
     },<% if (jsPre === 'coffeescript') { %>
     coffee: {
       dist: {
@@ -352,12 +340,12 @@ module.exports = function (grunt) {
     },
     concurrent: {
       server: [
-        'sass:server',<% if (jsPre === 'coffeescript') { %>
+        'less:server',<% if (jsPre === 'coffeescript') { %>
         'coffee:dist',<% } %>
         'jekyll:server'
       ],
       dist: [
-        'sass:dist',<% if (jsPre === 'coffeescript') { %>
+        'less:dist',<% if (jsPre === 'coffeescript') { %>
         'coffee:dist',<% } %>
         'copy:dist'
       ]
@@ -381,7 +369,7 @@ module.exports = function (grunt) {
   grunt.registerTask('check', [
     'clean:server',
     'jekyll:check',
-    'sass:dist',<% if (jsPre === 'coffeescript') { %>
+    'less:dist',<% if (jsPre === 'coffeescript') { %>
     'coffee:dist',<% } %>
     'jshint:all',
     'csscss:check',

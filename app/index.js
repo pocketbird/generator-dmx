@@ -73,12 +73,6 @@ dmxGenerator.prototype.askForTools = function askForTools() {
       choices: ['None', 'CoffeeScript']
     },
     {
-      name: 'sassComp',
-      type: 'list',
-      message: 'Sass compiler',
-      choices: ['Ruby', 'LibSass']
-    },
-    {
       name: 'googleAnalytics',
       type: 'confirm',
       message: 'Include Google Analytics?',
@@ -93,9 +87,6 @@ dmxGenerator.prototype.askForTools = function askForTools() {
 
     // Multiple choice 'None' to false
     this.jsPre = props.jsPre === 'None' ? false : props.jsPre.toLowerCase();
-
-    // Lowercase sassComp variable
-    this.sassComp = props.sassComp.toLowerCase();
 
     cb();
   }.bind(this));
@@ -235,23 +226,4 @@ dmxGenerator.prototype.jsPreprocessor = function jsPreprocessor() {
   } else {
     this.copy('conditional/javascript/app.js', 'app/scripts/app.js');
   }
-};
-
-dmxGenerator.prototype.installBitters = function installBitters() {
-  var root = shelljs.pwd();
-
-  // Install Bitters
-  shelljs.cd('app/styles');
-  shelljs.exec('bundle exec bitters install');
-  shelljs.cd(root);
-
-  // Replace Rails-style @import of neat-helpers
-  var gridSettings = shelljs.cat('app/styles/base/_grid-settings.scss');
-  gridSettings = gridSettings.replace(/^@import 'neat-helpers';.*/, "@import 'neat/app/assets/stylesheets/neat-helpers';");
-  gridSettings.to('app/styles/base/_grid-settings.scss');
-
-  // Uncomment Neat grid-settings @import
-  var base = shelljs.cat('app/styles/base/_base.scss');
-  base = base.replace(/^\/\/ @import 'grid-settings';.*/, "@import 'grid-settings';");
-  base.to('app/styles/base/_base.scss');
 };
