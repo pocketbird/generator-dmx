@@ -78,7 +78,7 @@ module.exports = function (grunt) {
           ]
         },
         options: {
-          open: false,
+          open: true,
           proxy: '0.0.0.0:9000', // Proxy the connect:livereload server
           watchTask: true,
           xip: true
