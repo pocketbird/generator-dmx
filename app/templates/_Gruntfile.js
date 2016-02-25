@@ -462,6 +462,11 @@ module.exports = function (grunt) {
     'buildcontrol'
   ]);<% } %>
 
+  grunt.registerTask('deploy-ftp', [
+    'build',
+    'ftpush'
+  ]);
+
   grunt.registerTask('default', [
     'check',
     'build'
