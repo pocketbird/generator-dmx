@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
+          open: false,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          open: true,
+          open: false,
           base: [
             '<%%= yeoman.dist %>'
           ]
@@ -78,10 +78,10 @@ module.exports = function (grunt) {
           ]
         },
         options: {
-          open: true,
+          open: false,
           proxy: '0.0.0.0:9000', // Proxy the connect:livereload server
           watchTask: true,
-          xip: true
+          xip: false
         }
       }
     },
