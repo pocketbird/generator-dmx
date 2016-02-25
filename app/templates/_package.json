@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-browser-sync": "^2.2.0",<% if (deploy) { %>
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-bundle-wrapper": "0.0.2",<% if (deploy) { %>
     "grunt-build-control": "~0.1.2",<% } %>
+    "grunt-check-dependencies": "^0.11.2",
     "grunt-concurrent": "~0.3.0",
     "grunt-contrib-clean": "~0.5.0",<% if (jsPre === 'coffeescript') { %>
     "grunt-contrib-coffee": "~0.7.0",<% } %>
@@ -20,6 +22,7 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.5.2",
     "grunt-csscss": "~0.5.0",
+    "grunt-ftpush": "^0.3.3",
     "grunt-jekyll": "^0.4.3",<% if (deployHost === 'GitHub Pages' && ghPagesProject === 'project') { %>
     "grunt-replace": "~0.5.1",<% } %>
     "grunt-rev": "~0.1.0",

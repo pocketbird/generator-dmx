@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     },
     watch: {
       less: {
-        files: ['<%%= yeoman.app %>/styles/**/*.{less}'],
+        files: ['<%%= yeoman.app %>/styles/**/*.less'],
         tasks: ['less:server']
       },<% if (jsPre === 'coffeescript') { %>
       coffee: {
@@ -321,6 +321,51 @@ module.exports = function (grunt) {
         ]
       }
     },<% } %>
+    ftpush: {
+      build: {
+        auth: {
+          host: 'uxcd.io',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: '<%= yeoman.dist %>',
+        dest: '/unity.hcaprototype.com/html/',
+        //exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'dist/tmp']
+        //keep: ['/important/images/at/server/*.jpg']
+      }
+    },
+    'bundle-check': {
+      options: {
+        outputNameFailed: 'bundleWrapper.output.check.failed'
+      },
+      'my-01': {
+        files: {
+          src: ['Gemfile']
+        }
+      }
+    },
+    'bundle-install': {
+      options: {
+        inputNameFiles: 'bundleWrapper.output.check.failed'
+      },
+      'check-fallback': {}
+    },
+    checkDependencies: {
+      npm: {
+        options: {
+          packageManager: 'npm',
+          install: true,
+          continue: false
+        }
+      },
+      bower: {
+        options: {
+          packageManager: 'bower',
+          install: true,
+          continue: false
+        }
+      },
+    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -374,9 +419,13 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
+      'checkDependencies',
+      'bundle-check',
+      'bundle-install',
       'clean:server',
       'concurrent:server',
       'connect:livereload',
+      'browserSync',
       'watch'
     ]);
   });
