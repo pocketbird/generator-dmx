@@ -329,7 +329,7 @@ module.exports = function (grunt) {
           authKey: 'key1'
         },
         src: '<%= yeoman.dist %>',
-        dest: '/unity.hcaprototype.com/html/',
+        dest: '/<%= deployRemote %>.hcaprototype.com/html/',
         //exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'dist/tmp']
         //keep: ['/important/images/at/server/*.jpg']
       }

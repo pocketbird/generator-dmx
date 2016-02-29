@@ -115,7 +115,7 @@ dmxGenerator.prototype.askForDeployment = function askForDeployment() {
       name: 'deployHost',
       type: 'list',
       message: 'Host to deploy to',
-      choices: ['GitHub Pages', 'Generic remote'],
+      choices: ['GitHub Pages', 'FTP'],
       when: function (answers) {
         return answers.deploy;
       }
@@ -144,10 +144,10 @@ dmxGenerator.prototype.askForDeployment = function askForDeployment() {
       }
     },
     {
-      name: 'remoteURL',
-      message: 'Remote URL',
+      name: 'hcaprototypeSubdomain',
+      message: 'What is the hcaprototype.com subdomain?  (i.e. `unity` in the case of `unity.hcaprototype.com`)',
       when: function (answers) {
-        return answers.deployHost === 'Generic remote';
+        return answers.deployHost === 'FTP';
       }
     },
     {
@@ -185,7 +185,7 @@ dmxGenerator.prototype.askForDeployment = function askForDeployment() {
     if (this.deployHost === 'GitHub Pages') {
       this.deployRemote = 'git@github.com:' + this.ghOwner + '/' + this.ghRepo + '.git';
     } else {
-      this.deployRemote = props.remoteURL;
+      this.deployRemote = props.hcaprototypeSubdomain;
     }
 
     cb();
