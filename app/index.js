@@ -151,6 +151,20 @@ dmxGenerator.prototype.askForDeployment = function askForDeployment() {
       }
     },
     {
+      name: 'ftpUsername',
+      message: 'FTP Username',
+      when: function (answers) {
+        return answers.deployHost === 'FTP';
+      }
+    },
+    {
+      name: 'ftpPassword',
+      message: 'FTP Password',
+      when: function (answers) {
+        return answers.deployHost === 'FTP';
+      }
+    },
+    {
       name: 'deployBranch',
       message: 'Branch to deploy to',
       default: function(answers) {
@@ -177,6 +191,8 @@ dmxGenerator.prototype.askForDeployment = function askForDeployment() {
     this.ghOwner        = props.ghOwner;
     this.ghRepo         = props.ghRepo;
     this.deployBranch   = props.deployBranch;
+    this.ftpUsername    = props.ftpUsername;
+    this.ftpPassword    = props.ftpPassword;
 
     if (props.ghPagesProject) {
       this.ghPagesProject = props.ghPagesProject.replace('/', '_').toLowerCase();
