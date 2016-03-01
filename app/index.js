@@ -224,6 +224,8 @@ dmxGenerator.prototype.app = function app() {
   this.copy('bowerrc', '.bowerrc');
   this.copy('csslintrc', '.csslintrc');
   this.copy('gitignore', '.gitignore');
+  this.copy('.ftppass', '.ftppass');
+  this.copy('.ftppass.keep', '.ftppass.keep');
   this.template('_Gruntfile.js', 'Gruntfile.js');
   this.template('config.yml', '_config.yml');
   this.template('_config.build.yml', '_config.build.yml');
